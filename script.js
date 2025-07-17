@@ -1,122 +1,88 @@
-const navbar = document.getElementById('navbar');
+const toggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const iconImg = document.getElementById('theme-icon');
+const slides = document.querySelectorAll(".slide");
+let current = 0;
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
+function nextSlide() {
+  slides[current].classList.remove("active");
+  current = (current + 1) % slides.length;
+  slides[current].classList.add("active");
+}
+
+setInterval(nextSlide, 5000);
+toggleBtn.addEventListener('click', () => {
+  const isDark = body.classList.toggle('dark-theme');
+
+  if (isDark) {
+    body.classList.remove('light-theme');
+    iconImg.src = 'Assets/ellipse.png';
   } else {
-    navbar.classList.remove('scrolled');
+    body.classList.add('light-theme');
+    iconImg.src = 'Assets/moon.svg';
+  }
+});
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('mobile-sidebar');
+const closeSidebar = document.getElementById('close-sidebar');
+
+hamburger.onclick = () => {
+  sidebar.classList.add('open');
+};
+
+closeSidebar.onclick = () => {
+  sidebar.classList.remove('open');
+};
+
+const sidebarToggleBtn = document.getElementById('sidebar-theme-toggle');
+const sidebarIcon = sidebarToggleBtn.querySelector('img');
+
+sidebarToggleBtn.addEventListener('click', () => {
+  const isDark = body.classList.toggle('dark-theme');
+  if (isDark) {
+    body.classList.remove('light-theme');
+    iconImg.src = sidebarIcon.src = 'Assets/ellipse.png';
+  } else {
+    body.classList.add('light-theme');
+    iconImg.src = sidebarIcon.src = 'Assets/moon.png';
   }
 });
 
-const images = [
-  'url("Assets/background 01.jpeg")',
-  'url("Assets/background 02.jpeg")',
-  'url("Assets/background 03.jpeg")',
-  'url("Assets/background 04.png")',
-];
-let current = 0;
-const overlay = document.querySelector('.bg-overlay');
-
-function updateBackground() {
-  overlay.style.backgroundImage = images[current];
-}
-
-function prevImage() {
-  current = (current - 1 + images.length) % images.length;
-  fadeImage();
-}
-
-function nextImage() {
-  current = (current + 1) % images.length;
-  fadeImage();
-}
-
-function fadeImage() {
-  overlay.style.opacity = 0;
-  setTimeout(() => {
-    updateBackground();
-    overlay.style.opacity = 0.5;
-  }, 500);
-}
-
-setInterval(() => {
-  nextImage();
-}, 5000);
-
-updateBackground();
-
-document.querySelectorAll('.boxx').forEach(el => {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  obs.observe(el);
-});
-
-const lines = [
-  document.querySelector('.line-tl'),
-  document.querySelector('.line-tr'),
-  document.querySelector('.line-bl'),
-  document.querySelector('.line-br')
-];
-
-const bubbles = [
-  document.querySelector('.bubble-tl'),
-  document.querySelector('.bubble-tr'),
-  document.querySelector('.bubble-bl'),
-  document.querySelector('.bubble-br')
-];
-
-const fadeTexts = document.querySelectorAll('.title4');
-
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      lines.forEach((line, i) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); 
-        }
-        setTimeout(() => {
-          line.classList.add('animate');
-
-          setTimeout(() => {
-            bubbles[i].classList.add('visible');
-          }, 1000);
-        }, i * 1200); 
-      });
-      observer.disconnect();
-    }
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('open');
   });
 });
 
-observer.observe(document.querySelector('.main4body'));
 
-fadeTexts.forEach(text => {
-  observer.observe(text);
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotFrameContainer = document.getElementById('chatbot-frame-container');
+  const closeChatbot = document.getElementById('close-chatbot');
 
-
-let observer1;
-
-const cards = document.querySelectorAll('.card');
-
-observer1 = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      observer1.unobserve(entry.target);
-    }
+  chatbotToggle.addEventListener('click', () => {
+    chatbotFrameContainer.style.display = 'flex';
+    chatbotToggle.style.display = 'none';
   });
-}, {
-  threshold: 0.1
+
+  closeChatbot.addEventListener('click', () => {
+    chatbotFrameContainer.style.display = 'none';
+    chatbotToggle.style.display = 'block';
+  });
 });
 
-cards.forEach(card => {
-  observer1.observe(card);
+document.addEventListener('DOMContentLoaded', () => {
+  const mapToggle = document.getElementById('map-toggle');
+  const mapFrameContainer = document.getElementById('map-frame-container');
+  const closemap = document.getElementById('close-map');
+
+  mapToggle.addEventListener('click', () => {
+    mapFrameContainer.style.display = 'flex';
+    mapToggle.style.display = 'none';
+  });
+
+  closemap.addEventListener('click', () => {
+    mapFrameContainer.style.display = 'none';
+    mapToggle.style.display = 'block';
+  });
 });

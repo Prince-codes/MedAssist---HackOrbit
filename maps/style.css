@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* ⛔ prevent scrollbars */
+  height: 100%;
+  width: 100%;
+}
+
 .main6 {
   height: 100vh;
   width: 100%;
@@ -8,8 +16,8 @@
 }
 
 #map {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -94,7 +102,7 @@ body.dark-theme #map {
   z-index: 999;
 }
 
-/* 📱 Mobile Responsive */
+
 @media (max-width: 768px) {
   #sidebar {
     width: 100%;

@@ -151,6 +151,11 @@ body {
     background: #ccc;
     cursor: not-allowed;
 }
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
 
 .loading-indicator {

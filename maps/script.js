@@ -1,4 +1,4 @@
-const API_KEY = "7b18e0fb384943d3b94bd58bb9f4f047"; // Replace this with your real key
+const API_KEY = "7b18e0fb384943d3b94bd58bb9f4f047";
 let map, tileLayer, routeLayer = null, userLat, userLon, openMarker = null;
 
 const lightTile = `https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=${API_KEY}`;

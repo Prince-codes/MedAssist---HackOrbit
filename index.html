@@ -1,232 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MedAssist</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="animation.css" />
-  <link rel="stylesheet" href="med_chatbot/chat.css" />
-  <link rel="stylesheet" href="VideocallF/style2.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="maps/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap
+  
+  
 </head>
+<body class="light-theme">
 
-<body>
-  <div class="main1" id="main1">
-    <div class="titlebar">
-      <img src="Assets/titlebar.svg" alt="" class="v1" />
-      <div class="medtitle">MedAssist</div>
+  <header class="navbar">
+  <div class="logo">MedAssist</div>
 
-      <div class="navbar" id="navbar">
-        <a href="#main1" class="nav1">Home</a>
-        <a href="#main2" class="nav2">Services</a>
-        <a href="#main3" class="nav3">Med AI</a>
-        <a href="#main4" class="nav4">Doctor Assist</a>
-        <a href="#main5" class="nav5">More Features</a>
-        <a href="#main8" class="nav6">FAQ</a>
-      </div>
-    </div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+  </nav>
 
-    <div class="main1body">
-      <div class="Log">
-        <a href="logg/index1.html"><button class="login mainbutton">Login</button></a>
-        <a href="logg/index2.html"><button class="signup mainbutton">Sign-up</button></a>
-        <button id="logout-btn" class="mainbutton" style="display: none;">Logout</button>
-      </div>
+  <div class="nav-actions">
+    <button id="theme-toggle">
+      <img id="theme-icon" src="Assets/moon.svg" alt="Theme Icon" />
+    </button>
 
-      <div class="bg-overlay"></div>
-      <div class="textcontent">
-        <div class="line2">Welcome</div>
-        <div class="line1">
-          Smart Online Medical Shop with AI-Driven Recommendations & Premium Doctor Support
-        </div>
-      </div>
-
-      <button class="Nbutton left" onclick="prevImage()">🢀</button>
-      <button class="Nbutton right" onclick="nextImage()">🢂</button>
-    </div>
+    <a href="#login" class="login-btn">Login</a>
   </div>
 
-  <div class="main2" id="main2">
-    <div class="services-text">
-      <div class="line11">Services we provide</div>
-    </div>
-    <div class="box-container">
-      <div class="box1 boxx">
-        <div class="box-text"></div>
-        <img src="Assets/hospital.png" style="height: 45%;" alt="" class="icon" />
-        <img class="box" src="Assets/box.svg" alt="" />
-      </div>
-      <div class="box2 boxx">
-        <div class="box-text"></div>
-        <img src="Assets/doc.png" style="height: 45%;" alt="" class="icon" />
-        <img class="box" src="Assets/box.svg" alt="" />
-      </div>
-      <div class="box3 boxx">
-        <div class="box-text"></div>
-        <img src="Assets/hearttt.png" style="height: 40%;" alt="" class="icon" />
-        <img class="box" src="Assets/box.svg" alt="" />
-      </div>
-    </div>
+  <!-- Hamburger for Mobile -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
+</header>
 
-  <div class="main3" id="main3">
-    <div class="ai-container">
-      <h1 class="ai-title">Med AI</h1>
-      <p class="ai-subtitle">How can I help you today?</p>
-
-      <div class="chat-history" id="chat-history">
-        <div class="message ai">Hello! Ask me about your medical queries.</div>
-      </div>
-
-      <div class="input-section">
-        <label for="input" class="input-label">Ask Med AI</label>
-        <div class="bar">
-          <textarea id="input" placeholder="Type your problem here..." rows="1"></textarea>
-          <button id="send-button">Send</button>
-        </div>
-        <div class="loading-indicator" id="loading-indicator">
-          <span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
+<!-- Sidebar OUTSIDE the header -->
+<div class="mobile-sidebar" id="mobile-sidebar">
+  <div class="sidebar-header">
+    <button id="sidebar-theme-toggle">
+      <img src="Assets/moon.svg" alt="Theme Icon" class="sidebar-theme-icon" />
+    </button>
+    <button id="close-sidebar">×</button>
   </div>
-
-  <div class="main4" id="main4">
-    <div class="title4">
-      <div class="title-text">Book an Appointment</div>
-      <img src="Assets/premium.png" alt="" class="premium" />
-    </div>
-    <div class="main4body">
-      <img src="Assets/doc11.png" alt="" class="doc11" />
-      <img src="Assets/Vector 2.png" alt="" class="line9" />
-
-      <svg class="linesvg">
-        <line class="line line-tl" x1="50%" y1="50%" x2="20%" y2="20%" />
-        <line class="line line-tr" x1="50%" y1="50%" x2="80%" y2="20%" />
-        <line class="line line-bl" x1="50%" y1="50%" x2="20%" y2="80%" />
-        <line class="line line-br" x1="50%" y1="50%" x2="80%" y2="80%" />
-      </svg>
-
-      <div class="bubble bubble-tl">
-        <h1>Video Call</h1>
-        <p>Get a one to one video call feature for premium users</p>
-      </div>
-
-      <div class="bubble bubble-tr">
-        <h1>Nearest Doctor</h1>
-        <p>Stop searching everywhere — your nearest doctor is just a click away!</p>
-      </div>
-      <div class="bubble bubble-bl">
-        <h1>Purchase medicine</h1>
-        <p>search for your medicine and add to them cart now!</p>
-      </div>
-      <div class="bubble bubble-br">
-        <h1>Rebook Doctor</h1>
-        <p>Enjoyed your last consultation? you can rebook the same doctor anytime</p>
-      </div>
-    </div>
+  <nav class="mobile-nav">
+    <a href="#home">Home</a>
+    <a href="#login" class="login-btn">Login</a>
+  </nav>
+</div>
 
 
+
+
+  <section class="bg">
+  <div class="slideshow">
+    <img src="Assets/slide1.jpeg" class="slide active" />
+    <img src="Assets/slide2.jpeg" class="slide" />
+    <img src="Assets/slide3.jpeg" class="slide" />
+    <div class="overlay"></div>
   </div>
-  <div class="footer4">
-    <div class="maps">Unlock premium and get access to exclusive Perks</div>
-    <button class="get-started"><a href="#main7" class="getS">Get Started</a></button>
+  <div class="head-text">
+    <h1>Your Healthcare Companion</h1>
+    <p>AI powered diagnosis and professional support – all in one place</p>
   </div>
+</section>
 
+  <!-- Placeholder for modules -->
+  <main id="main-content">
+    <!-- Other modules will go here -->
+  </main>
+</section>
 
-  <div id="main5" class="main5">
-    <div class="main5-title">
-      <h1>One on One Call with our Doctors</h1>
-      <button id="joinBtn">Create & Join Call</button>
-    </div>
-    <div id="videoContainer"></div>
-  </div>
-
-  <div id="main6" class="main6">
-    <div id="theme-toggle">🌓</div>
-
-    <div id="map"></div>
-
-    <div id="sidebar" class="hidden">
-      <button id="close-sidebar">✖</button>
-      <div id="sidebar-content">
-        <h2 id="place-name">Place Name</h2>
-        <p id="place-address"></p>
-        <p id="place-distance"></p>
-        <p id="place-eta"></p>
-      </div>
-    </div>
-  </div>
-
-  <div id="main7" class="main7">
-    <div class="subscription-section">
-      <div class="card card-left">
-        <h2>Basic Plan</h2>
-        <p>Good for personal use with limited features.</p>
-      </div>
-      <div class="card card-center">
-        <h2>Premium Plan</h2>
-        <p>Best value with full features and priority support.</p>
-      </div>
-      <div class="card card-right">
-        <h2>Pro Plan</h2>
-        <p>Advanced tools for professionals and businesses.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="main8" class="main8">
-    <div class="faqmainbox">
-
-      <div class="aboutus lastbox">
-        <div class="faq-title">About Us</div>
-        <div class="aboutus-text">MedAssist is a user-friendly web platform designed to simplify the
-          medicine-buying process. It allows users to describe their health problems in natural
-          language, and instantly recommends relevant
-          over-the-counter or prescription medicines from a curated database.Premium users also gain
-          access to direct doctor consultation and enhanced features such as delivery tracking, better
-          discounts, and faster service</div>
-      </div>
-
-      <div class="contactus lastbox">
-        <div class="faq-title">Contact Us</div>
-        <div class="contactus-text">For any queries or support,<br>
-          please reach out to us at:<br>
-          +91-123-456-XXXX or email us at support@medassist.com
-        </div>
-      </div>
-
-      <div class="FAQ lastbox">
-        <div class="faq-title">FAQ</div>
-        <div class="faq-text">
-          <div>What is MedAssist?</div>
-          <div>How does MedAssist work?</div>
-          <div>Is my data safe with MedAssist?</div>
-          <div>What should I do in case of a medical emergency?</div>
-          <div>Is video call Feature free?</div>
-          <div>what are the benefits of premium</div>
-          <div>How can I upgrade to premium?</div>
-        </div>
-      </div>
-
-    </div>
-    <div class="copyright">© All rights Reserved</div>
-  </div>
-
-  <!-- Scripts -->
   <script src="script.js"></script>
-  <script src="med_chatbot/script.js"></script>
-  <script src="VideocallF/node.js"></script>
-  <script type="module" src="auth.js"></script>
-  <script type="module" src="logg/logout.js"></script>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="maps/script.js"></script>
-  <script type="module" src="videocallGuard.js"></script>
-  <script type="module" src="chatbotGuard.js"></script>
+  <!-- Floating Chatbot -->
+<div id="chatbot-toggle">
+  💬
+</div>
+
+<div id="chatbot-frame-container">
+  <div id="chatbot-header">
+    
+    <button id="close-chatbot">×</button>
+  </div>
+  <iframe src="med_chatbot/index.html" id="chatbot-frame" title="MedAssist AI"></iframe>
+</div>
+
+<div id="map-toggle">
+  🌏
+</div>
+
+<div id="map-frame-container">
+  <div id="map-header">
+    
+    <button id="close-map">×</button>
+  </div>
+  <iframe src="maps/index.html" id="map-frame" title="Nearby docs"></iframe>
+</div>
+
 </body>
 
 </html>
