@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Med AI Chatbot</title>
-    <link rel="stylesheet" href="chat.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedAI-Assist</title>
+  <link rel="stylesheet" href="chat.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <body>
-    <div class="main3">
-        <div class="ai-container">
-            <h1 class="ai-title">Med AI</h1>
-            <p class="ai-subtitle">How can I help you today?</p>
-            
-            <div class="chat-history" id="chat-history">
-                <div class="message ai">Hello! Ask me about your medical queries.</div>
-            </div>
-
-            <div class="input-section">
-                <label for="input" class="input-label">Ask Med AI</label>
-                <div class="bar">
-                    <textarea id="input" placeholder="Type your problem here..." rows="1"></textarea>
-                    <button id="send-button">Send</button>
-                </div>
-                <div class="loading-indicator" id="loading-indicator">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
+  <!-- Floating Chat Widget -->
+  <div class="chat-widget">
+    <div class="ai-container">
+      <!-- Header -->
+      <div class="chat-header">
+        <img src="../Assets/bot.png" alt="Bot Logo" class="chatbot-logo" />
+        <div class="bot-info">
+          <div class="bot-name">MedAI-Assist</div>
+          <div class="bot-status"><span class="status-dot"></span> Online</div>
         </div>
-    </div>
+        <div class="chat-menu">&#8942;</div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Chat History (scrollable only) -->
+      <div class="chat-history" id="chat-history"></div>
+
+      <!-- Footer -->
+      <div class="chat-footer">
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <button class="action-btn quick-btn">Emergency?</button>
+          <button class="action-btn quick-btn">Medication Info</button>
+          <button class="action-btn quick-btn">Symptom Checker</button>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+          <div class="bar">
+            <button id="attach-btn" title="Attach file" class="icon-btn">📎</button>
+            <textarea id="input" placeholder="Type your message..." rows="1"></textarea>
+            <button id="mic-btn" title="Voice input" class="icon-btn">🎤</button>
+            <button id="send-button" title="Send" class="icon-btn">➤</button>
+          </div>
+          <div class="loading-indicator" id="loading-indicator">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
