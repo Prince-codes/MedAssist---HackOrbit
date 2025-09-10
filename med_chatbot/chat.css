@@ -1,32 +1,31 @@
 /* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: "Poppins", sans-serif;
   background: #f4f4f9;
+  height: 100vh;
+  display: flex;
 }
 
-/* Floating chatbot widget */
-.chat-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
+/* Fullscreen Chatbot Frame */
+#chatbot-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Main chatbot container */
 .ai-container {
-  width: 360px;
-  max-width: 95vw;
-  height: 600px;
-  max-height: 90vh;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  max-height: 100%;
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -37,49 +36,25 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0.8rem 1rem;
+  background: #007bff;
+  color: #fff;
+  padding: 1rem;
   flex-shrink: 0;
 }
 
 .chatbot-logo {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
-.bot-info {
-  flex: 1;
-}
+.bot-info { flex: 1; }
+.bot-name { font-size: 1.2rem; font-weight: 600; }
+.bot-status { font-size: 0.8rem; color: #d4ffd4; display: flex; align-items: center; gap: 4px; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #00ff55; }
+.chat-menu { cursor: pointer; }
 
-.bot-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.bot-status {
-  font-size: 0.8rem;
-  color: #00c853;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00c853;
-}
-
-.chat-menu {
-  color: #666;
-  cursor: pointer;
-}
-
-/* Chat history (scrollable only) */
+/* Chat history */
 .chat-history {
   flex: 1;
   padding: 1rem;
@@ -95,9 +70,8 @@ body {
   max-width: 80%;
   padding: 0.6rem 0.9rem;
   border-radius: 12px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.4;
-  word-break: break-word;
 }
 
 .message.user {
@@ -118,21 +92,19 @@ body {
 .chat-footer {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   background: #fff;
   border-top: 1px solid #e0e0e0;
 }
 
-/* Quick actions */
+/* Quick Actions */
 .quick-actions {
   display: flex;
   justify-content: space-around;
   padding: 0.6rem;
-  background: #fff;
+  background: #f8f9fa;
   border-bottom: 1px solid #e0e0e0;
   gap: 0.5rem;
 }
-
 .action-btn {
   flex: 1;
   background: #f1f3f6;
@@ -142,23 +114,11 @@ body {
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s;
-  color: #333;
-  text-align: center;
 }
+.action-btn:hover { background: #007bff; color: #fff; border-color: #007bff; }
 
-.action-btn:hover {
-  background: #007bff;
-  color: #fff;
-  border-color: #007bff;
-}
-
-/* Input section */
-.input-section {
-  padding: 0.6rem;
-  background: #fff;
-  flex-shrink: 0;
-}
-
+/* Input Section */
+.input-section { padding: 0.6rem; background: #fff; }
 .bar {
   display: flex;
   align-items: center;
@@ -168,7 +128,6 @@ body {
   padding: 0.4rem 0.6rem;
   border: 1px solid #ddd;
 }
-
 #input {
   flex: 1;
   background: transparent;
@@ -176,51 +135,25 @@ body {
   resize: none;
   font-size: 0.9rem;
   outline: none;
-  color: #333;
 }
+.icon-btn { border: none; background: none; font-size: 1.1rem; cursor: pointer; color: #007bff; }
+.icon-btn:hover { transform: scale(1.2); }
 
-.icon-btn {
-  border: none;
-  background: none;
-  font-size: 1.1rem;
-  color: #007bff;
-  cursor: pointer;
-  transition: transform 0.2s, color 0.2s;
-}
-.icon-btn:hover {
-  transform: scale(1.2);
-  color: #0056b3;
-}
-
-/* Loading indicator */
+/* Loading Indicator */
 .loading-indicator {
   display: flex;
   justify-content: center;
   margin-top: 0.3rem;
   visibility: hidden;
 }
-
 .loading-indicator span {
-  width: 8px;
-  height: 8px;
-  margin: 0 2px;
-  background: #007bff;
-  border-radius: 50%;
+  width: 8px; height: 8px; margin: 0 2px; background: #007bff; border-radius: 50%;
   animation: bounce 1s infinite;
 }
-
-.loading-indicator span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.loading-indicator span:nth-child(3) {
-  animation-delay: 0.4s;
-}
+.loading-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.loading-indicator span:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes bounce {
-  0%, 80%, 100% {
-    transform: scale(0.8);
-  }
-  40% {
-    transform: scale(1.2);
-  }
+  0%, 80%, 100% { transform: scale(0.8); }
+  40% { transform: scale(1.2); }
 }

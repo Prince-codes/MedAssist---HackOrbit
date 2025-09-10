@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +7,9 @@
   <link rel="stylesheet" href="chat.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-
 <body>
-  <!-- Floating Chat Widget -->
-  <div class="chat-widget">
+  <!-- Fullscreen Chatbot -->
+  <div id="chatbot-frame">
     <div class="ai-container">
       <!-- Header -->
       <div class="chat-header">
@@ -23,7 +21,7 @@
         <div class="chat-menu">&#8942;</div>
       </div>
 
-      <!-- Chat History (scrollable only) -->
+      <!-- Chat History -->
       <div class="chat-history" id="chat-history"></div>
 
       <!-- Footer -->
