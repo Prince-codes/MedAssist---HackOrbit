@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MedAssist</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,93 +12,90 @@
   
   
 </head>
-<body class="light-theme">
+<body class=" light-theme">
 
   <header class="navbar">
-  <div class="logo">MedAssist</div>
+    <div class="logo">MedAssist</div>
 
-  <nav class="nav-links">
-    <a href="#home">Home</a>
-  </nav>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+    </nav>
 
-  <div class="nav-actions">
-    <button id="theme-toggle">
-      <img id="theme-icon" src="Assets/moon.svg" alt="Theme Icon" />
-    </button>
+    <div class="nav-actions">
+      <button id="theme-toggle">
+        <img id="theme-icon" src="Assets/moon.svg" alt="Theme Icon" />
+      </button>
 
-    <a href="#login" class="login-btn">Login</a>
+      <a href="#login" class="login-btn">Login</a>
+    </div>
+
+    <!-- Hamburger for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Sidebar OUTSIDE the header -->
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <div class="sidebar-header">
+      <button id="sidebar-theme-toggle">
+        <img src="Assets/moon.svg" alt="Theme Icon" class="sidebar-theme-icon" />
+      </button>
+      <button id="close-sidebar">×</button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#home">Home</a>
+      <a href="#login" class="login-btn">Login</a>
+    </nav>
   </div>
-
-  <!-- Hamburger for Mobile -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</header>
-
-<!-- Sidebar OUTSIDE the header -->
-<div class="mobile-sidebar" id="mobile-sidebar">
-  <div class="sidebar-header">
-    <button id="sidebar-theme-toggle">
-      <img src="Assets/moon.svg" alt="Theme Icon" class="sidebar-theme-icon" />
-    </button>
-    <button id="close-sidebar">×</button>
-  </div>
-  <nav class="mobile-nav">
-    <a href="#home">Home</a>
-    <a href="#login" class="login-btn">Login</a>
-  </nav>
-</div>
-
-
-
 
   <section class="bg">
-  <div class="slideshow">
-    <img src="Assets/slide1.jpeg" class="slide active" />
-    <img src="Assets/slide2.jpeg" class="slide" />
-    <img src="Assets/slide3.jpeg" class="slide" />
-    <div class="overlay"></div>
-  </div>
-  <div class="head-text">
-    <h1>Your Healthcare Companion</h1>
-    <p>AI powered diagnosis and professional support – all in one place</p>
-  </div>
-</section>
+    <div class="slideshow">
+      <img src="Assets/slide1.jpeg" class="slide active" />
+      <img src="Assets/slide2.jpeg" class="slide" />
+      <img src="Assets/slide3.jpeg" class="slide" />
+      <div class="overlay"></div>
+    </div>
+    <div class="head-text">
+      <h1>Your Healthcare Companion</h1>
+      <p>AI powered diagnosis and professional support – all in one place</p>
+    </div>
+  </section>
 
   <!-- Placeholder for modules -->
   <main id="main-content">
     <!-- Other modules will go here -->
   </main>
-</section>
+  </section>
 
   <script src="script.js"></script>
   <!-- Floating Chatbot -->
-<div id="chatbot-toggle">
-  💬
-</div>
-
-<div id="chatbot-frame-container">
-  <div id="chatbot-header">
-    
-    <button id="close-chatbot">×</button>
+  <div id="chatbot-toggle">
+    💬
   </div>
-  <iframe src="med_chatbot/index.html" id="chatbot-frame" title="MedAssist AI"></iframe>
-</div>
 
-<div id="map-toggle">
-  🌏
-</div>
+  <div id="chatbot-frame-container">
+    <div id="chatbot-header">
 
-<div id="map-frame-container">
-  <div id="map-header">
-    
-    <button id="close-map">×</button>
+      <button id="close-chatbot">×</button>
+    </div>
+    <iframe src="med_chatbot/index.html" id="chatbot-frame" title="MedAssist AI"></iframe>
   </div>
-  <iframe src="maps/index.html" id="map-frame" title="Nearby docs"></iframe>
-</div>
 
-</body>
+  <div id="map-toggle">
+    🌏
+  </div>
+
+  <div id="map-frame-container">
+    <div id="map-header">
+
+      <button id="close-map">×</button>
+    </div>
+    <iframe src="maps/index.html" id="map-frame" title="Nearby docs"></iframe>
+  </div>
+
+  </body>
 
 </html>

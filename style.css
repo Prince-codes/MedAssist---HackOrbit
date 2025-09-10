@@ -5,7 +5,7 @@
 }
 
 body {
-    
+
 
   font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -30,32 +30,32 @@ body {
   position: sticky;
   top: 0;
   z-index: 2;
-    background: #020024;
-    background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
-    background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#49C4B8", GradientType=1);
-    
+  background: #020024;
+  background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#49C4B8", GradientType=1);
+
   transition: background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 
 body.light-theme .navbar {
   background: #020024;
-background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
-background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
-background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#49C4B8", GradientType=1);
+  background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(58, 160, 166, 1) 0%, rgba(73, 196, 184, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#49C4B8", GradientType=1);
 }
 
 /* 🔵 Dark Theme Navbar */
 body.dark-theme .navbar {
-background: #020024;
-background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(13, 89, 92, 1) 0%, rgba(4, 43, 39, 1) 100%);
-background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(13, 89, 92, 1) 0%, rgba(4, 43, 39, 1) 100%);
-background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(13, 89, 92, 1) 0%, rgba(4, 43, 39, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#042B27", GradientType=1);
+  background: #020024;
+  background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(13, 89, 92, 1) 0%, rgba(4, 43, 39, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(13, 89, 92, 1) 0%, rgba(4, 43, 39, 1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(13, 89, 92, 1) 0%, rgba(4, 43, 39, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#042B27", GradientType=1);
 }
 
 
@@ -132,9 +132,12 @@ body.dark-theme .login-btn {
 }
 
 /* Add shadow to all buttons globally if needed */
-button, .mainbutton, .login-btn {
+button,
+.mainbutton,
+.login-btn {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
 #theme-toggle:hover {
   transform: rotate(20deg);
 }
@@ -147,7 +150,7 @@ button, .mainbutton, .login-btn {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .login-btn:hover {
@@ -157,7 +160,7 @@ button, .mainbutton, .login-btn {
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
 
-.bg{
+.bg {
 
   position: relative;
   height: 90vh;
@@ -193,7 +196,8 @@ button, .mainbutton, .login-btn {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6); /* darkness for contrast */
+  background: rgba(0, 0, 0, 0.6);
+  /* darkness for contrast */
   z-index: 2;
 }
 
@@ -204,6 +208,7 @@ button, .mainbutton, .login-btn {
   color: #fff;
   max-width: 80%;
 }
+
 .head-text h1 {
   font-family: 'Outfit', sans-serif;
   font-size: 3rem;
@@ -311,6 +316,7 @@ button, .mainbutton, .login-btn {
   width: 24px;
   height: 24px;
 }
+
 #chatbot-toggle {
   position: fixed;
   bottom: 20px;
@@ -321,9 +327,11 @@ button, .mainbutton, .login-btn {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 #chatbot-toggle:hover {
   transform: scale(1.1);
 }
+
 #chatbot-frame-container {
   display: none;
   position: fixed;
@@ -368,9 +376,11 @@ button, .mainbutton, .login-btn {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 #map-toggle:hover {
   transform: scale(1.1);
 }
+
 #map-frame-container {
   display: none;
   position: fixed;
@@ -378,12 +388,14 @@ button, .mainbutton, .login-btn {
   left: 20px;
   width: 650px;
   height: 500px;
-  background: transparent; /* remove white background if iframe is full */
+  background: transparent;
+  /* remove white background if iframe is full */
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   z-index: 6;
   overflow: hidden;
-  padding: 0;             /* 🧼 remove any default spacing */
+  padding: 0;
+  /* 🧼 remove any default spacing */
   margin: 0;
 }
 
@@ -411,6 +423,7 @@ button, .mainbutton, .login-btn {
 
 
 @media (max-width: 768px) {
+
   .nav-links,
   .nav-actions {
     display: none;
@@ -432,6 +445,7 @@ button, .mainbutton, .login-btn {
   }
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }

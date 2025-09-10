@@ -10,7 +10,7 @@ let conversationHistory = [
 function appendMessage(sender, text) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', sender);
-    messageElement.innerHTML = marked.parse(text); 
+    messageElement.innerHTML = marked.parse(text);
     chatHistory.appendChild(messageElement);
     chatHistory.scrollTo({ top: chatHistory.scrollHeight, behavior: "smooth" });
 }
@@ -50,7 +50,7 @@ async function sendMessage() {
         if (!response.ok) throw new Error(data.message || `Error ${response.status}`);
 
         const aiReply = data.choices[0].message.content;
-        appendMessage('ai', aiReply); 
+        appendMessage('ai', aiReply);
         conversationHistory.push({ role: 'assistant', content: aiReply });
 
     } catch (error) {
